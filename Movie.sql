@@ -74,3 +74,36 @@ MODIFY ( asno number(10),
 ALTER TABLE actassign
 --ADD mno number(10) not null;
 ADD constraint FK_actassign_mno FOREIGN key (mno) REFERENCES movie(mno);
+-----------------------------------------------------------------------------------------------------           
+
+CREATE TABLE staff(
+    sno number(4) constraint staff_sno primary key,
+    sname varchar(200) constraint staff_sname not null,
+    srank varchar(20) constraint staff_srank not null,
+    spos varchar(20) constraint staff_spos not null,
+    scont number(20) constraint staff_scont not null
+    );
+
+    -- 삭제
+    ALTER TABLE staff
+    DROP COLUMN spos;
+    
+    -- 추가
+    ALTER TABLE staff
+    ADD sroll varchar2(20);
+    
+    -- 변경
+    ALTER TABLE staff
+    MODIFY( sroll constraint staff_sroll not null,
+            sname varchar2(200),
+            srank varchar2(20),
+            scont varchar2(20),
+            sroll varchar2(20));
+
+-----------------------------------------------------------------------------------------------------           
+     
+CREATE TABLE sassign(
+    sano number(10) constraint sassign primary key,
+    mno number(10) constraint fk_sassign_mno not null, foreign key(mno) references movie(mno),
+    sno number(10) constraint fk_sassign_sno not null, foreign key(sno) references staff(sno),
+    spay number(10) constraint spay not null);

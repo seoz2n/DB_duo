@@ -15,7 +15,8 @@ CREATE TABLE movie(
     mno number(10),
     title varchar2(100)
     );
-    
+-----------------------------------------------------------------------------------------------------           
+  
 CREATE TABLE genre(
     gno number(4) constraint genre_gno primary key,
     gtype varchar(50) constraint genre_Gtype not null
@@ -33,7 +34,7 @@ CREATE TABLE genre(
     ALTER TABLE genre
     MODIFY(gno number(10)
     );
-
+-----------------------------------------------------------------------------------------------------           
     
 CREATE TABLE gassign(
     gano number(10) constraint gassign_gano primary key,
@@ -43,7 +44,8 @@ CREATE TABLE gassign(
     -- 추가
     ALTER TABLE gassign
     ADD constraint FK_gassign_gno FOREIGN key (gno) REFERENCES genre(gno);
-    
+-----------------------------------------------------------------------------------------------------           
+
 CREATE TABLE actor(
     ano number(4) constraint actor_ano PRIMARY key, 
     aname varchar(200) constraint actor_aname not null,
@@ -56,3 +58,19 @@ CREATE TABLE actor(
     MODIFY (ano number(10),
            aname varchar2(200),
            agency varchar2(200));
+-----------------------------------------------------------------------------------------------------           
+ CREATE TABLE actassign(
+    asno number(4) constraint pk_actassign_asno primary key,
+    ano number(4) constraint fk_actassign_ano not null, foreign key(ano) references actor(ano),
+    apay number(10) constraint actassign_apay not null,
+    aroll varchar(100) constraint actassign_aroll not null);
+    
+-- 변경    
+ALTER TABLE actassign
+MODIFY ( asno number(10),
+         ano number(10),
+         aroll varchar2(20));
+         
+ALTER TABLE actassign
+--ADD mno number(10) not null;
+ADD constraint FK_actassign_mno FOREIGN key (mno) REFERENCES movie(mno);

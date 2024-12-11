@@ -21,10 +21,25 @@ CREATE TABLE genre(
     gtype varchar(50) constraint genre_Gtype not null
     );
 
-    -- 변경
+    -- 삭제
     ALTER TABLE genre
     DROP COLUMN gtype
     ;
     -- 추가
     ALTER TABLE genre
     ADD (gname varchar2(100) constraint genre_Gname not null);
+    
+    -- 변경
+    ALTER TABLE genre
+    MODIFY(gno number(10)
+    );
+
+    
+CREATE TABLE gassign(
+    gano number(10) constraint gassign_gano primary key,
+    gno number(10)
+    );
+    
+    -- 추가
+    ALTER TABLE gassign
+    ADD constraint FK_gassign_gno FOREIGN key (gno) REFERENCES genre(gno);

@@ -107,3 +107,24 @@ CREATE TABLE sassign(
     mno number(10) constraint fk_sassign_mno not null, foreign key(mno) references movie(mno),
     sno number(10) constraint fk_sassign_sno not null, foreign key(sno) references staff(sno),
     spay number(10) constraint spay not null);
+
+-----------------------------------------------------------------------------------------------------           
+
+CREATE TABLE sponsor(
+    spno number(4) constraint sponsor_sno primary key,
+    spnr varchar(200) constraint sponsor_spnr not null,
+    spcont number(20) constraint sponsor_spcont not null
+    );
+    
+    -- 변경
+    ALTER TABLE sponsor
+    MODIFY (spno number(10),
+            spnr varchar2(200));
+            
+    -- 테이블명 변경
+    ALTER TABLE sponsor
+    RENAME COLUMN spnr TO company;
+    
+    -- 변경
+    ALTER TABLE sponsor 
+    ADD CONSTRAINT sponsor_company_nn CHECK (company IS NOT NULL);

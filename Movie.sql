@@ -43,3 +43,16 @@ CREATE TABLE gassign(
     -- 추가
     ALTER TABLE gassign
     ADD constraint FK_gassign_gno FOREIGN key (gno) REFERENCES genre(gno);
+    
+CREATE TABLE actor(
+    ano number(4) constraint actor_ano PRIMARY key, 
+    aname varchar(200) constraint actor_aname not null,
+    agency varchar(200),
+    acont number(20) constraint actor_acont not null
+    );
+    
+    -- 변경
+    ALTER TABLE actor
+    MODIFY (ano number(10),
+           aname varchar2(200),
+           agency varchar2(200));

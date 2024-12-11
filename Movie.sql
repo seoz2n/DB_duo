@@ -128,3 +128,30 @@ CREATE TABLE sponsor(
     -- 변경
     ALTER TABLE sponsor 
     ADD CONSTRAINT sponsor_company_nn CHECK (company IS NOT NULL);
+
+-----------------------------------------------------------------------------------------------------           
+
+CREATE TABLE spassign(
+    pno number(4) constraint spassign_pno primary key,
+    prod varchar(200) constraint spassign_prod not null,
+    rdate date constraint spassign_rdate not null);
+    
+    -- 열 이름 변경
+    ALTER TABLE spassign
+    rename column pno to spano;
+
+    ALTER TABLE spassign
+    rename column prod to product;
+    
+    -- 컬럼 추가
+    ALTER TABLE spassign
+    ADD (mno number(10),
+        spno number (10),
+        rtdate date not null);
+        
+    -- 포링키 추가
+    ALTER TABLE spassign
+    ADD constraint fk_mno foreign key (mno) references movie(mno);
+    
+    ALTER TABLE spassign
+    ADD constraint fk_spno foreign key (spno) references sponsor(spno);

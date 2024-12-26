@@ -56,6 +56,43 @@ JOIN actor a ON aa.ano = a.ano
 WHERE m.title = '기생충' AND aa.aroll = '주연';
 
 
+-- GENRE 테이블 데이터 삽입 예시
+INSERT INTO genre (gno, gname) VALUES (1, '드라마');
+INSERT INTO genre (gno, gname) VALUES (2, '액션');
+INSERT INTO genre (gno, gname) VALUES (3, '스릴러');
+INSERT INTO genre (gno, gname) VALUES (4, '로맨스');
+INSERT INTO genre (gno, gname) VALUES (5, '코미디');
+INSERT INTO genre (gno, gname) VALUES (6, '공상과학');
+INSERT INTO genre (gno, gname) VALUES (7, '판타지');
+INSERT INTO genre (gno, gname) VALUES (8, '모험');
+INSERT INTO genre (gno, gname) VALUES (9, '범죄');
+INSERT INTO genre (gno, gname) VALUES (10, '다큐멘터리');
+
+SELECT * FROM genre;
+
+
+-- gassign 테이블에 mno 컬럼 추가
+ALTER TABLE gassign
+ADD mno NUMBER(10);
+
+-- mno 컬럼을 movie 테이블의 mno와 연결
+ALTER TABLE gassign
+ADD CONSTRAINT fk_gassign_mno FOREIGN KEY (mno) REFERENCES movie(mno);
+
+
+
+-- gassign 테이블 데이터 삽입 예시
+INSERT INTO gassign (gano, gno, mno) VALUES (1, 1, 1); -- 기생충: 드라마
+INSERT INTO gassign (gano, gno, mno) VALUES (2, 2, 2); -- 올드보이: 액션
+INSERT INTO gassign (gano, gno, mno) VALUES (3, 3, 3); -- 암살: 스릴러
+INSERT INTO gassign (gano, gno, mno) VALUES (4, 4, 4); -- 명량: 로맨스
+INSERT INTO gassign (gano, gno, mno) VALUES (5, 5, 5); -- 극한직업: 코미디
+INSERT INTO gassign (gano, gno, mno) VALUES (6, 6, 6); -- 택시운전사: 공상과학
+INSERT INTO gassign (gano, gno, mno) VALUES (7, 7, 7); -- 국제시장: 판타지
+INSERT INTO gassign (gano, gno, mno) VALUES (8, 8, 8); -- 왕의 남자: 모험
+INSERT INTO gassign (gano, gno, mno) VALUES (9, 9, 9); -- 도둑들: 범죄
+INSERT INTO gassign (gano, gno, mno) VALUES (10, 10, 10); -- 신과 함께: 다큐멘터리
+
 
 
 

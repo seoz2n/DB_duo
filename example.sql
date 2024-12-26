@@ -93,6 +93,79 @@ INSERT INTO gassign (gano, gno, mno) VALUES (8, 8, 8); -- 왕의 남자: 모험
 INSERT INTO gassign (gano, gno, mno) VALUES (9, 9, 9); -- 도둑들: 범죄
 INSERT INTO gassign (gano, gno, mno) VALUES (10, 10, 10); -- 신과 함께: 다큐멘터리
 
+-- 스태프 데이터 삽입 얘시
+
+-- staff 테이블 데이터 삽입 예시
+INSERT INTO staff (sno, sname, srank, scont, sroll) VALUES (1, '홍길동', '감독', '01012345678', '연출');
+INSERT INTO staff (sno, sname, srank, scont, sroll) VALUES (2, '김철수', '작가', '01023456789', '대본 작성');
+INSERT INTO staff (sno, sname, srank, scont, sroll) VALUES (3, '이영희', '촬영 감독', '01034567890', '촬영');
+INSERT INTO staff (sno, sname, srank, scont, sroll) VALUES (4, '박민수', '음악 감독', '01045678901', '음악 제작');
+INSERT INTO staff (sno, sname, srank, scont, sroll) VALUES (5, '최수정', '조명 감독', '01056789012', '조명');
+INSERT INTO staff (sno, sname, srank, scont, sroll) VALUES (6, '장영호', '편집 감독', '01067890123', '영상 편집');
+INSERT INTO staff (sno, sname, srank, scont, sroll) VALUES (7, '윤미라', '의상 디자이너', '01078901234', '의상 제작');
+INSERT INTO staff (sno, sname, srank, scont, sroll) VALUES (8, '정해성', '미술 감독', '01089012345', '세트 디자인');
+INSERT INTO staff (sno, sname, srank, scont, sroll) VALUES (9, '강은희', '프로듀서', '01090123456', '제작 관리');
+INSERT INTO staff (sno, sname, srank, scont, sroll) VALUES (10, '이도훈', '촬영 보조', '01091234567', '촬영 지원');
+
+SELECT * FROM staff;
+
+
+-- sassign 테이블 데이터 삽입 예시
+INSERT INTO sassign (sano, mno, sno, spay) VALUES (1, 1, 1, 100000000); -- 기생충, 홍길동(감독)
+INSERT INTO sassign (sano, mno, sno, spay) VALUES (2, 1, 2, 50000000);  -- 기생충, 김철수(작가)
+INSERT INTO sassign (sano, mno, sno, spay) VALUES (3, 1, 3, 70000000);  -- 기생충, 이영희(촬영 감독)
+INSERT INTO sassign (sano, mno, sno, spay) VALUES (4, 2, 4, 60000000);  -- 올드보이, 박민수(음악 감독)
+INSERT INTO sassign (sano, mno, sno, spay) VALUES (5, 3, 5, 40000000);  -- 암살, 최수정(조명 감독)
+INSERT INTO sassign (sano, mno, sno, spay) VALUES (6, 4, 6, 45000000);  -- 명량, 장영호(편집 감독)
+INSERT INTO sassign (sano, mno, sno, spay) VALUES (7, 5, 7, 30000000);  -- 극한직업, 윤미라(의상 디자이너)
+INSERT INTO sassign (sano, mno, sno, spay) VALUES (8, 6, 8, 35000000);  -- 택시운전사, 정해성(미술 감독)
+INSERT INTO sassign (sano, mno, sno, spay) VALUES (9, 7, 9, 80000000);  -- 국제시장, 강은희(프로듀서)
+INSERT INTO sassign (sano, mno, sno, spay) VALUES (10, 8, 10, 20000000); -- 왕의 남자, 이도훈(촬영 보조)
+
+SELECT * FROM SASSIGN;
+
+-- 협찬사
+
+-- sponsor 테이블 데이터 삽입 예시
+INSERT INTO sponsor (spno, company, spcont) VALUES (1, 'CJ 엔터테인먼트', '01012345678');
+INSERT INTO sponsor (spno, company, spcont) VALUES (2, '롯데 컬처웍스', '01023456789');
+INSERT INTO sponsor (spno, company, spcont) VALUES (3, 'NEW (Next Entertainment World)', '01034567890');
+INSERT INTO sponsor (spno, company, spcont) VALUES (4, '쇼박스', '01045678901');
+INSERT INTO sponsor (spno, company, spcont) VALUES (5, '메가박스중앙플러스엠', '01056789012');
+INSERT INTO sponsor (spno, company, spcont) VALUES (6, '판씨네마', '01067890123');
+INSERT INTO sponsor (spno, company, spcont) VALUES (7, '워너브라더스 코리아', '01078901234');
+INSERT INTO sponsor (spno, company, spcont) VALUES (8, '20세기 스튜디오', '01089012345');
+INSERT INTO sponsor (spno, company, spcont) VALUES (9, '디즈니 코리아', '01090123456');
+INSERT INTO sponsor (spno, company, spcont) VALUES (10, '넷플릭스 코리아', '01091234567');
+
+SELECT * FROM sponsor;
+
+-- 협찬 - 영화 관계
+-- spassign 테이블 데이터 삽입 예시
+INSERT INTO spassign (spano, product, rdate, mno, spno, rtdate) 
+VALUES (1, '카메라', TO_DATE('2019-05-01', 'YYYY-MM-DD'), 1, 1, TO_DATE('2019-05-30', 'YYYY-MM-DD')); -- 기생충 - CJ 엔터테인먼트
+INSERT INTO spassign (spano, product, rdate, mno, spno, rtdate) 
+VALUES (2, '의상', TO_DATE('2019-04-15', 'YYYY-MM-DD'), 1, 7, TO_DATE('2019-05-25', 'YYYY-MM-DD')); -- 기생충 - 워너브라더스 코리아
+INSERT INTO spassign (spano, product, rdate, mno, spno, rtdate) 
+VALUES (3, '프로모션', TO_DATE('2003-10-01', 'YYYY-MM-DD'), 2, 2, TO_DATE('2003-12-01', 'YYYY-MM-DD')); -- 올드보이 - 롯데 컬처웍스
+INSERT INTO spassign (spano, product, rdate, mno, spno, rtdate) 
+VALUES (4, '소품', TO_DATE('2015-06-01', 'YYYY-MM-DD'), 3, 3, TO_DATE('2015-07-20', 'YYYY-MM-DD')); -- 암살 - NEW
+INSERT INTO spassign (spano, product, rdate, mno, spno, rtdate) 
+VALUES (5, '조명 장비', TO_DATE('2014-06-01', 'YYYY-MM-DD'), 4, 4, TO_DATE('2014-07-10', 'YYYY-MM-DD')); -- 명량 - 쇼박스
+INSERT INTO spassign (spano, product, rdate, mno, spno, rtdate) 
+VALUES (6, '촬영 장비', TO_DATE('2019-01-01', 'YYYY-MM-DD'), 5, 5, TO_DATE('2019-02-15', 'YYYY-MM-DD')); -- 극한직업 - 메가박스중앙플러스엠
+INSERT INTO spassign (spano, product, rdate, mno, spno, rtdate) 
+VALUES (7, 'VFX 소프트웨어', TO_DATE('2017-07-01', 'YYYY-MM-DD'), 6, 6, TO_DATE('2017-08-01', 'YYYY-MM-DD')); -- 택시운전사 - 판씨네마
+INSERT INTO spassign (spano, product, rdate, mno, spno, rtdate) 
+VALUES (8, '광고', TO_DATE('2014-10-01', 'YYYY-MM-DD'), 7, 8, TO_DATE('2014-11-01', 'YYYY-MM-DD')); -- 국제시장 - 20세기 스튜디오
+INSERT INTO spassign (spano, product, rdate, mno, spno, rtdate) 
+VALUES (9, '음향 장비', TO_DATE('2005-11-01', 'YYYY-MM-DD'), 8, 9, TO_DATE('2005-12-15', 'YYYY-MM-DD')); -- 왕의 남자 - 디즈니 코리아
+INSERT INTO spassign (spano, product, rdate, mno, spno, rtdate) 
+VALUES (10, '영상 편집 소프트웨어', TO_DATE('2017-11-01', 'YYYY-MM-DD'), 10, 10, TO_DATE('2017-12-01', 'YYYY-MM-DD')); -- 신과 함께 - 넷플릭스 코리아
+
+
+SELECT * FROM spassign;
 
 
 
+r

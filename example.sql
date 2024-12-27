@@ -1,171 +1,167 @@
--- ì˜í™” ì •ë³´
+-- ¿µÈ­ Á¤º¸
 
-INSERT INTO movie (mno, title, pdate, producer) VALUES (1, 'ê¸°ìƒì¶©', TO_DATE('2019-05-30', 'YYYY-MM-DD'), 'ë´‰ì¤€í˜¸');
-INSERT INTO movie (mno, title, pdate, producer) VALUES (2, 'ì˜¬ë“œë³´ì´', TO_DATE('2003-11-21', 'YYYY-MM-DD'), 'ë°•ì°¬ìš±');
-INSERT INTO movie (mno, title, pdate, producer) VALUES (3, 'ì•”ì‚´', TO_DATE('2015-07-22', 'YYYY-MM-DD'), 'ìµœë™í›ˆ');
-INSERT INTO movie (mno, title, pdate, producer) VALUES (4, 'ëª…ëŸ‰', TO_DATE('2014-07-30', 'YYYY-MM-DD'), 'ê¹€í•œë¯¼');
-INSERT INTO movie (mno, title, pdate, producer) VALUES (5, 'ê·¹í•œì§ì—…', TO_DATE('2019-01-23', 'YYYY-MM-DD'), 'ì´ë³‘í—Œ');
-INSERT INTO movie (mno, title, pdate, producer) VALUES (6, 'íƒì‹œìš´ì „ì‚¬', TO_DATE('2017-08-02', 'YYYY-MM-DD'), 'ì¥í›ˆ');
-INSERT INTO movie (mno, title, pdate, producer) VALUES (7, 'êµ­ì œì‹œì¥', TO_DATE('2014-12-17', 'YYYY-MM-DD'), 'ìœ¤ì œê· ');
-INSERT INTO movie (mno, title, pdate, producer) VALUES (8, 'ì™•ì˜ ë‚¨ì', TO_DATE('2005-12-29', 'YYYY-MM-DD'), 'ì´ì¤€ìµ');
-INSERT INTO movie (mno, title, pdate, producer) VALUES (9, 'ë„ë‘‘ë“¤', TO_DATE('2012-07-25', 'YYYY-MM-DD'), 'ìµœë™í›ˆ');
-INSERT INTO movie (mno, title, pdate, producer) VALUES (10, 'ì‹ ê³¼ í•¨ê»˜-ì£„ì™€ ë²Œ', TO_DATE('2017-12-20', 'YYYY-MM-DD'), 'ê¹€ìš©í™”');
+INSERT INTO movie (mno, title, pdate, producer) VALUES (1, '±â»ıÃæ', TO_DATE('2019-05-30', 'YYYY-MM-DD'), 'ºÀÁØÈ£');
+INSERT INTO movie (mno, title, pdate, producer) VALUES (2, '¿Ãµåº¸ÀÌ', TO_DATE('2003-11-21', 'YYYY-MM-DD'), '¹ÚÂù¿í');
+INSERT INTO movie (mno, title, pdate, producer) VALUES (3, '¾Ï»ì', TO_DATE('2015-07-22', 'YYYY-MM-DD'), 'ÃÖµ¿ÈÆ');
+INSERT INTO movie (mno, title, pdate, producer) VALUES (4, '¸í·®', TO_DATE('2014-07-30', 'YYYY-MM-DD'), '±èÇÑ¹Î');
+INSERT INTO movie (mno, title, pdate, producer) VALUES (5, '±ØÇÑÁ÷¾÷', TO_DATE('2019-01-23', 'YYYY-MM-DD'), 'ÀÌº´Çå');
+INSERT INTO movie (mno, title, pdate, producer) VALUES (6, 'ÅÃ½Ã¿îÀü»ç', TO_DATE('2017-08-02', 'YYYY-MM-DD'), 'ÀåÈÆ');
+INSERT INTO movie (mno, title, pdate, producer) VALUES (7, '±¹Á¦½ÃÀå', TO_DATE('2014-12-17', 'YYYY-MM-DD'), 'À±Á¦±Õ');
+INSERT INTO movie (mno, title, pdate, producer) VALUES (8, '¿ÕÀÇ ³²ÀÚ', TO_DATE('2005-12-29', 'YYYY-MM-DD'), 'ÀÌÁØÀÍ');
+INSERT INTO movie (mno, title, pdate, producer) VALUES (9, 'µµµÏµé', TO_DATE('2012-07-25', 'YYYY-MM-DD'), 'ÃÖµ¿ÈÆ');
+INSERT INTO movie (mno, title, pdate, producer) VALUES (10, '½Å°ú ÇÔ²²-ÁË¿Í ¹ú', TO_DATE('2017-12-20', 'YYYY-MM-DD'), '±è¿ëÈ­');
 
 select * from movie;
 
--- ë°°ìš° ì •ë³´(ë²ˆí˜¸, ì´ë¦„, ì†Œì†ì‚¬, ì—°ë½ì²˜)
-INSERT INTO actor (ano, aname, agency, acont) VALUES (1, 'ì†¡ê°•í˜¸', 'í˜¸ë‘ì´ì—”í„°í…Œì¸ë¨¼íŠ¸', '01012345678');
-INSERT INTO actor (ano, aname, agency, acont) VALUES (2, 'ì´ë³‘í—Œ', 'BHì—”í„°í…Œì¸ë¨¼íŠ¸', '01023456789');
-INSERT INTO actor (ano, aname, agency, acont) VALUES (3, 'ì „ë„ì—°', 'ë§¤ë‹ˆì§€ë¨¼íŠ¸ ìˆ²', '01034567890');
-INSERT INTO actor (ano, aname, agency, acont) VALUES (4, 'í•˜ì •ìš°', 'ì›Œí¬í•˜ìš°ìŠ¤ì»´í¼ë‹ˆ', '01045678901');
-INSERT INTO actor (ano, aname, agency, acont) VALUES (5, 'ê¹€í˜œìˆ˜', 'í˜¸ë‘ì•¤ìœ ì—”í„°í…Œì¸ë¨¼íŠ¸', '01056789012');
-INSERT INTO actor (ano, aname, agency, acont) VALUES (6, 'ë§ˆë™ì„', 'ë¹…í€ì¹˜ì—”í„°í…Œì¸ë¨¼íŠ¸', '01067890123');
-INSERT INTO actor (ano, aname, agency, acont) VALUES (7, 'ë°°ë‘ë‚˜', 'ìƒ›ë³„ë‹¹ì—”í„°í…Œì¸ë¨¼íŠ¸', '01078901234');
-INSERT INTO actor (ano, aname, agency, acont) VALUES (8, 'ìœ ì•„ì¸', 'UAA', '01089012345');
-INSERT INTO actor (ano, aname, agency, acont) VALUES (9, 'í•œì§€ë¯¼', 'BHì—”í„°í…Œì¸ë¨¼íŠ¸', '01090123456');
-INSERT INTO actor (ano, aname, agency, acont) VALUES (10, 'ì´ì •ì¬', 'ì•„í‹°ìŠ¤íŠ¸ì»´í¼ë‹ˆ', '01091234567');
+-- ¹è¿ì Á¤º¸(¹øÈ£, ÀÌ¸§, ¼Ò¼Ó»ç, ¿¬¶ôÃ³)
+INSERT INTO actor (ano, aname, agency, acont) VALUES (1, '¼Û°­È£', 'È£¶ûÀÌ¿£ÅÍÅ×ÀÎ¸ÕÆ®', '01012345678');
+INSERT INTO actor (ano, aname, agency, acont) VALUES (2, 'ÀÌº´Çå', 'BH¿£ÅÍÅ×ÀÎ¸ÕÆ®', '01023456789');
+INSERT INTO actor (ano, aname, agency, acont) VALUES (3, 'Àüµµ¿¬', '¸Å´ÏÁö¸ÕÆ® ½£', '01034567890');
+INSERT INTO actor (ano, aname, agency, acont) VALUES (4, 'ÇÏÁ¤¿ì', '¿öÅ©ÇÏ¿ì½ºÄÄÆÛ´Ï', '01045678901');
+INSERT INTO actor (ano, aname, agency, acont) VALUES (5, '±èÇı¼ö', 'È£µÎ¾ØÀ¯¿£ÅÍÅ×ÀÎ¸ÕÆ®', '01056789012');
+INSERT INTO actor (ano, aname, agency, acont) VALUES (6, '¸¶µ¿¼®', 'ºòÆİÄ¡¿£ÅÍÅ×ÀÎ¸ÕÆ®', '01067890123');
+INSERT INTO actor (ano, aname, agency, acont) VALUES (7, '¹èµÎ³ª', '»ûº°´ç¿£ÅÍÅ×ÀÎ¸ÕÆ®', '01078901234');
+INSERT INTO actor (ano, aname, agency, acont) VALUES (8, 'À¯¾ÆÀÎ', 'UAA', '01089012345');
+INSERT INTO actor (ano, aname, agency, acont) VALUES (9, 'ÇÑÁö¹Î', 'BH¿£ÅÍÅ×ÀÎ¸ÕÆ®', '01090123456');
+INSERT INTO actor (ano, aname, agency, acont) VALUES (10, 'ÀÌÁ¤Àç', '¾ÆÆ¼½ºÆ®ÄÄÆÛ´Ï', '01091234567');
 
 select * from actor;
 
--- ACTASSIGN(ì˜í™”-ë°°ìš° ê´€ê³„ : ê´€ê³„ ë²ˆí˜¸, ë°°ìš° ë²ˆí˜¸, ì˜í™” ë²ˆí˜¸, ì¶œì—°ë£Œ, ë°°ìš° ì—­í• {ì£¼/ì¡°ì—°})
-INSERT INTO ACTASSIGN (asno, ano, mno, apay, aroll) VALUES (1, 1, 1, 50000000, 'ì£¼ì—°');
-INSERT INTO ACTASSIGN (asno, ano, mno, apay, aroll) VALUES (2, 2, 1, 30000000, 'ì¡°ì—°');
-INSERT INTO ACTASSIGN (asno, ano, mno, apay, aroll) VALUES (3, 3, 2, 40000000, 'ì£¼ì—°');
-INSERT INTO ACTASSIGN (asno, ano, mno, apay, aroll) VALUES (4, 4, 3, 45000000, 'ì£¼ì—°');
-INSERT INTO ACTASSIGN (asno, ano, mno, apay, aroll) VALUES (5, 5, 3, 25000000, 'ì¡°ì—°');
-INSERT INTO ACTASSIGN (asno, ano, mno, apay, aroll) VALUES (6, 6, 4, 35000000, 'ì¡°ì—°');
-INSERT INTO ACTASSIGN (asno, ano, mno, apay, aroll) VALUES (7, 7, 5, 60000000, 'ì£¼ì—°');
-INSERT INTO ACTASSIGN (asno, ano, mno, apay, aroll) VALUES (8, 8, 6, 32000000, 'ì¡°ì—°');
-INSERT INTO ACTASSIGN (asno, ano, mno, apay, aroll) VALUES (9, 9, 7, 30000000, 'ì¡°ì—°');
-INSERT INTO ACTASSIGN (asno, ano, mno, apay, aroll) VALUES (10, 10, 8, 70000000, 'ì£¼ì—°');
+-- ACTASSIGN(¿µÈ­-¹è¿ì °ü°è : °ü°è ¹øÈ£, ¹è¿ì ¹øÈ£, ¿µÈ­ ¹øÈ£, Ãâ¿¬·á, ¹è¿ì ¿ªÇÒ{ÁÖ/Á¶¿¬})
+INSERT INTO ACTASSIGN (asno, ano, mno, apay, aroll) VALUES (1, 1, 1, 50000000, 'ÁÖ¿¬');
+INSERT INTO ACTASSIGN (asno, ano, mno, apay, aroll) VALUES (2, 2, 1, 30000000, 'Á¶¿¬');
+INSERT INTO ACTASSIGN (asno, ano, mno, apay, aroll) VALUES (3, 3, 2, 40000000, 'ÁÖ¿¬');
+INSERT INTO ACTASSIGN (asno, ano, mno, apay, aroll) VALUES (4, 4, 3, 45000000, 'ÁÖ¿¬');
+INSERT INTO ACTASSIGN (asno, ano, mno, apay, aroll) VALUES (5, 5, 3, 25000000, 'Á¶¿¬');
+INSERT INTO ACTASSIGN (asno, ano, mno, apay, aroll) VALUES (6, 6, 4, 35000000, 'Á¶¿¬');
+INSERT INTO ACTASSIGN (asno, ano, mno, apay, aroll) VALUES (7, 7, 5, 60000000, 'ÁÖ¿¬');
+INSERT INTO ACTASSIGN (asno, ano, mno, apay, aroll) VALUES (8, 8, 6, 32000000, 'Á¶¿¬');
+INSERT INTO ACTASSIGN (asno, ano, mno, apay, aroll) VALUES (9, 9, 7, 30000000, 'Á¶¿¬');
+INSERT INTO ACTASSIGN (asno, ano, mno, apay, aroll) VALUES (10, 10, 8, 70000000, 'ÁÖ¿¬');
 
 
 
--- ì˜ˆì‹œ ì°¾ê¸° SQLë¬¸(ê¸°ìƒì¶© ì˜í™”ì— ì¶œì—°í•œ ë°°ìš°)
-SELECT a.aname AS ë°°ìš°ì´ë¦„
+-- ¿¹½Ã Ã£±â SQL¹®(±â»ıÃæ ¿µÈ­¿¡ Ãâ¿¬ÇÑ ¹è¿ì)
+SELECT a.aname AS ¹è¿ìÀÌ¸§
 FROM movie m
 JOIN actassign aa ON m.mno = aa.mno
 JOIN actor a ON aa.ano = a.ano
-WHERE m.title = 'ê¸°ìƒì¶©' AND aa.aroll = 'ì£¼ì—°';
+WHERE m.title = '±â»ıÃæ' AND aa.aroll = 'ÁÖ¿¬';
 
--- ì˜ˆì‹œ ì°¾ê¸° SQLë¬¸(ê¸°ìƒì¶© ì˜í™”ì— ì¶œì—°í•œ ë°°ìš°ì™€ ì¶œì—°ë£Œ)
-SELECT a.aname AS ë°°ìš°ì´ë¦„, aa.apay AS ì¶œì—°ë£Œ
+-- ¿¹½Ã Ã£±â SQL¹®(±â»ıÃæ ¿µÈ­¿¡ Ãâ¿¬ÇÑ ¹è¿ì¿Í Ãâ¿¬·á)
+SELECT a.aname AS ¹è¿ìÀÌ¸§, aa.apay AS Ãâ¿¬·á
 FROM movie m
 JOIN actassign aa ON m.mno = aa.mno
 JOIN actor a ON aa.ano = a.ano
-WHERE m.title = 'ê¸°ìƒì¶©' AND aa.aroll = 'ì£¼ì—°';
+WHERE m.title = '±â»ıÃæ' AND aa.aroll = 'ÁÖ¿¬';
 
 
--- GENRE í…Œì´ë¸” ë°ì´í„° ì‚½ì… ì˜ˆì‹œ
-INSERT INTO genre (gno, gname) VALUES (1, 'ë“œë¼ë§ˆ');
-INSERT INTO genre (gno, gname) VALUES (2, 'ì•¡ì…˜');
-INSERT INTO genre (gno, gname) VALUES (3, 'ìŠ¤ë¦´ëŸ¬');
-INSERT INTO genre (gno, gname) VALUES (4, 'ë¡œë§¨ìŠ¤');
-INSERT INTO genre (gno, gname) VALUES (5, 'ì½”ë¯¸ë””');
-INSERT INTO genre (gno, gname) VALUES (6, 'ê³µìƒê³¼í•™');
-INSERT INTO genre (gno, gname) VALUES (7, 'íŒíƒ€ì§€');
-INSERT INTO genre (gno, gname) VALUES (8, 'ëª¨í—˜');
-INSERT INTO genre (gno, gname) VALUES (9, 'ë²”ì£„');
-INSERT INTO genre (gno, gname) VALUES (10, 'ë‹¤íë©˜í„°ë¦¬');
+-- GENRE Å×ÀÌºí µ¥ÀÌÅÍ »ğÀÔ ¿¹½Ã
+INSERT INTO genre (gno, gname) VALUES (1, 'µå¶ó¸¶');
+INSERT INTO genre (gno, gname) VALUES (2, '¾×¼Ç');
+INSERT INTO genre (gno, gname) VALUES (3, '½º¸±·¯');
+INSERT INTO genre (gno, gname) VALUES (4, '·Î¸Ç½º');
+INSERT INTO genre (gno, gname) VALUES (5, 'ÄÚ¹Ìµğ');
+INSERT INTO genre (gno, gname) VALUES (6, '°ø»ó°úÇĞ');
+INSERT INTO genre (gno, gname) VALUES (7, 'ÆÇÅ¸Áö');
+INSERT INTO genre (gno, gname) VALUES (8, '¸ğÇè');
+INSERT INTO genre (gno, gname) VALUES (9, '¹üÁË');
+INSERT INTO genre (gno, gname) VALUES (10, '´ÙÅ¥¸àÅÍ¸®');
 
 SELECT * FROM genre;
 
 
--- gassign í…Œì´ë¸”ì— mno ì»¬ëŸ¼ ì¶”ê°€
+-- gassign Å×ÀÌºí¿¡ mno ÄÃ·³ Ãß°¡
 ALTER TABLE gassign
 ADD mno NUMBER(10);
 
--- mno ì»¬ëŸ¼ì„ movie í…Œì´ë¸”ì˜ mnoì™€ ì—°ê²°
+-- mno ÄÃ·³À» movie Å×ÀÌºíÀÇ mno¿Í ¿¬°á
 ALTER TABLE gassign
 ADD CONSTRAINT fk_gassign_mno FOREIGN KEY (mno) REFERENCES movie(mno);
 
 
 
--- gassign í…Œì´ë¸” ë°ì´í„° ì‚½ì… ì˜ˆì‹œ
-INSERT INTO gassign (gano, gno, mno) VALUES (1, 1, 1); -- ê¸°ìƒì¶©: ë“œë¼ë§ˆ
-INSERT INTO gassign (gano, gno, mno) VALUES (2, 2, 2); -- ì˜¬ë“œë³´ì´: ì•¡ì…˜
-INSERT INTO gassign (gano, gno, mno) VALUES (3, 3, 3); -- ì•”ì‚´: ìŠ¤ë¦´ëŸ¬
-INSERT INTO gassign (gano, gno, mno) VALUES (4, 4, 4); -- ëª…ëŸ‰: ë¡œë§¨ìŠ¤
-INSERT INTO gassign (gano, gno, mno) VALUES (5, 5, 5); -- ê·¹í•œì§ì—…: ì½”ë¯¸ë””
-INSERT INTO gassign (gano, gno, mno) VALUES (6, 6, 6); -- íƒì‹œìš´ì „ì‚¬: ê³µìƒê³¼í•™
-INSERT INTO gassign (gano, gno, mno) VALUES (7, 7, 7); -- êµ­ì œì‹œì¥: íŒíƒ€ì§€
-INSERT INTO gassign (gano, gno, mno) VALUES (8, 8, 8); -- ì™•ì˜ ë‚¨ì: ëª¨í—˜
-INSERT INTO gassign (gano, gno, mno) VALUES (9, 9, 9); -- ë„ë‘‘ë“¤: ë²”ì£„
-INSERT INTO gassign (gano, gno, mno) VALUES (10, 10, 10); -- ì‹ ê³¼ í•¨ê»˜: ë‹¤íë©˜í„°ë¦¬
+-- gassign Å×ÀÌºí µ¥ÀÌÅÍ »ğÀÔ ¿¹½Ã
+INSERT INTO gassign (gano, gno, mno) VALUES (1, 1, 1); -- ±â»ıÃæ: µå¶ó¸¶
+INSERT INTO gassign (gano, gno, mno) VALUES (2, 2, 2); -- ¿Ãµåº¸ÀÌ: ¾×¼Ç
+INSERT INTO gassign (gano, gno, mno) VALUES (3, 3, 3); -- ¾Ï»ì: ½º¸±·¯
+INSERT INTO gassign (gano, gno, mno) VALUES (4, 4, 4); -- ¸í·®: ·Î¸Ç½º
+INSERT INTO gassign (gano, gno, mno) VALUES (5, 5, 5); -- ±ØÇÑÁ÷¾÷: ÄÚ¹Ìµğ
+INSERT INTO gassign (gano, gno, mno) VALUES (6, 6, 6); -- ÅÃ½Ã¿îÀü»ç: °ø»ó°úÇĞ
+INSERT INTO gassign (gano, gno, mno) VALUES (7, 7, 7); -- ±¹Á¦½ÃÀå: ÆÇÅ¸Áö
+INSERT INTO gassign (gano, gno, mno) VALUES (8, 8, 8); -- ¿ÕÀÇ ³²ÀÚ: ¸ğÇè
+INSERT INTO gassign (gano, gno, mno) VALUES (9, 9, 9); -- µµµÏµé: ¹üÁË
+INSERT INTO gassign (gano, gno, mno) VALUES (10, 10, 10); -- ½Å°ú ÇÔ²²: ´ÙÅ¥¸àÅÍ¸®
 
--- ìŠ¤íƒœí”„ ë°ì´í„° ì‚½ì… ì–˜ì‹œ
+-- ½ºÅÂÇÁ µ¥ÀÌÅÍ »ğÀÔ ¾ê½Ã
 
--- staff í…Œì´ë¸” ë°ì´í„° ì‚½ì… ì˜ˆì‹œ
-INSERT INTO staff (sno, sname, srank, scont, sroll) VALUES (1, 'í™ê¸¸ë™', 'ê°ë…', '01012345678', 'ì—°ì¶œ');
-INSERT INTO staff (sno, sname, srank, scont, sroll) VALUES (2, 'ê¹€ì² ìˆ˜', 'ì‘ê°€', '01023456789', 'ëŒ€ë³¸ ì‘ì„±');
-INSERT INTO staff (sno, sname, srank, scont, sroll) VALUES (3, 'ì´ì˜í¬', 'ì´¬ì˜ ê°ë…', '01034567890', 'ì´¬ì˜');
-INSERT INTO staff (sno, sname, srank, scont, sroll) VALUES (4, 'ë°•ë¯¼ìˆ˜', 'ìŒì•… ê°ë…', '01045678901', 'ìŒì•… ì œì‘');
-INSERT INTO staff (sno, sname, srank, scont, sroll) VALUES (5, 'ìµœìˆ˜ì •', 'ì¡°ëª… ê°ë…', '01056789012', 'ì¡°ëª…');
-INSERT INTO staff (sno, sname, srank, scont, sroll) VALUES (6, 'ì¥ì˜í˜¸', 'í¸ì§‘ ê°ë…', '01067890123', 'ì˜ìƒ í¸ì§‘');
-INSERT INTO staff (sno, sname, srank, scont, sroll) VALUES (7, 'ìœ¤ë¯¸ë¼', 'ì˜ìƒ ë””ìì´ë„ˆ', '01078901234', 'ì˜ìƒ ì œì‘');
-INSERT INTO staff (sno, sname, srank, scont, sroll) VALUES (8, 'ì •í•´ì„±', 'ë¯¸ìˆ  ê°ë…', '01089012345', 'ì„¸íŠ¸ ë””ìì¸');
-INSERT INTO staff (sno, sname, srank, scont, sroll) VALUES (9, 'ê°•ì€í¬', 'í”„ë¡œë“€ì„œ', '01090123456', 'ì œì‘ ê´€ë¦¬');
-INSERT INTO staff (sno, sname, srank, scont, sroll) VALUES (10, 'ì´ë„í›ˆ', 'ì´¬ì˜ ë³´ì¡°', '01091234567', 'ì´¬ì˜ ì§€ì›');
+-- staff Å×ÀÌºí µ¥ÀÌÅÍ »ğÀÔ ¿¹½Ã
+INSERT INTO staff (sno, sname, srank, scont, sroll) VALUES (1, 'È«±æµ¿', '°¨µ¶', '01012345678', '¿¬Ãâ');
+INSERT INTO staff (sno, sname, srank, scont, sroll) VALUES (2, '±èÃ¶¼ö', 'ÀÛ°¡', '01023456789', '´ëº» ÀÛ¼º');
+INSERT INTO staff (sno, sname, srank, scont, sroll) VALUES (3, 'ÀÌ¿µÈñ', 'ÃÔ¿µ °¨µ¶', '01034567890', 'ÃÔ¿µ');
+INSERT INTO staff (sno, sname, srank, scont, sroll) VALUES (4, '¹Ú¹Î¼ö', 'À½¾Ç °¨µ¶', '01045678901', 'À½¾Ç Á¦ÀÛ');
+INSERT INTO staff (sno, sname, srank, scont, sroll) VALUES (5, 'ÃÖ¼öÁ¤', 'Á¶¸í °¨µ¶', '01056789012', 'Á¶¸í');
+INSERT INTO staff (sno, sname, srank, scont, sroll) VALUES (6, 'Àå¿µÈ£', 'ÆíÁı °¨µ¶', '01067890123', '¿µ»ó ÆíÁı');
+INSERT INTO staff (sno, sname, srank, scont, sroll) VALUES (7, 'À±¹Ì¶ó', 'ÀÇ»ó µğÀÚÀÌ³Ê', '01078901234', 'ÀÇ»ó Á¦ÀÛ');
+INSERT INTO staff (sno, sname, srank, scont, sroll) VALUES (8, 'Á¤ÇØ¼º', '¹Ì¼ú °¨µ¶', '01089012345', '¼¼Æ® µğÀÚÀÎ');
+INSERT INTO staff (sno, sname, srank, scont, sroll) VALUES (9, '°­ÀºÈñ', 'ÇÁ·Îµà¼­', '01090123456', 'Á¦ÀÛ °ü¸®');
+INSERT INTO staff (sno, sname, srank, scont, sroll) VALUES (10, 'ÀÌµµÈÆ', 'ÃÔ¿µ º¸Á¶', '01091234567', 'ÃÔ¿µ Áö¿ø');
 
 SELECT * FROM staff;
 
 
--- sassign í…Œì´ë¸” ë°ì´í„° ì‚½ì… ì˜ˆì‹œ
-INSERT INTO sassign (sano, mno, sno, spay) VALUES (1, 1, 1, 100000000); -- ê¸°ìƒì¶©, í™ê¸¸ë™(ê°ë…)
-INSERT INTO sassign (sano, mno, sno, spay) VALUES (2, 1, 2, 50000000);  -- ê¸°ìƒì¶©, ê¹€ì² ìˆ˜(ì‘ê°€)
-INSERT INTO sassign (sano, mno, sno, spay) VALUES (3, 1, 3, 70000000);  -- ê¸°ìƒì¶©, ì´ì˜í¬(ì´¬ì˜ ê°ë…)
-INSERT INTO sassign (sano, mno, sno, spay) VALUES (4, 2, 4, 60000000);  -- ì˜¬ë“œë³´ì´, ë°•ë¯¼ìˆ˜(ìŒì•… ê°ë…)
-INSERT INTO sassign (sano, mno, sno, spay) VALUES (5, 3, 5, 40000000);  -- ì•”ì‚´, ìµœìˆ˜ì •(ì¡°ëª… ê°ë…)
-INSERT INTO sassign (sano, mno, sno, spay) VALUES (6, 4, 6, 45000000);  -- ëª…ëŸ‰, ì¥ì˜í˜¸(í¸ì§‘ ê°ë…)
-INSERT INTO sassign (sano, mno, sno, spay) VALUES (7, 5, 7, 30000000);  -- ê·¹í•œì§ì—…, ìœ¤ë¯¸ë¼(ì˜ìƒ ë””ìì´ë„ˆ)
-INSERT INTO sassign (sano, mno, sno, spay) VALUES (8, 6, 8, 35000000);  -- íƒì‹œìš´ì „ì‚¬, ì •í•´ì„±(ë¯¸ìˆ  ê°ë…)
-INSERT INTO sassign (sano, mno, sno, spay) VALUES (9, 7, 9, 80000000);  -- êµ­ì œì‹œì¥, ê°•ì€í¬(í”„ë¡œë“€ì„œ)
-INSERT INTO sassign (sano, mno, sno, spay) VALUES (10, 8, 10, 20000000); -- ì™•ì˜ ë‚¨ì, ì´ë„í›ˆ(ì´¬ì˜ ë³´ì¡°)
+-- sassign Å×ÀÌºí µ¥ÀÌÅÍ »ğÀÔ ¿¹½Ã
+INSERT INTO sassign (sano, mno, sno, spay) VALUES (1, 1, 1, 100000000); -- ±â»ıÃæ, È«±æµ¿(°¨µ¶)
+INSERT INTO sassign (sano, mno, sno, spay) VALUES (2, 1, 2, 50000000);  -- ±â»ıÃæ, ±èÃ¶¼ö(ÀÛ°¡)
+INSERT INTO sassign (sano, mno, sno, spay) VALUES (3, 1, 3, 70000000);  -- ±â»ıÃæ, ÀÌ¿µÈñ(ÃÔ¿µ °¨µ¶)
+INSERT INTO sassign (sano, mno, sno, spay) VALUES (4, 2, 4, 60000000);  -- ¿Ãµåº¸ÀÌ, ¹Ú¹Î¼ö(À½¾Ç °¨µ¶)
+INSERT INTO sassign (sano, mno, sno, spay) VALUES (5, 3, 5, 40000000);  -- ¾Ï»ì, ÃÖ¼öÁ¤(Á¶¸í °¨µ¶)
+INSERT INTO sassign (sano, mno, sno, spay) VALUES (6, 4, 6, 45000000);  -- ¸í·®, Àå¿µÈ£(ÆíÁı °¨µ¶)
+INSERT INTO sassign (sano, mno, sno, spay) VALUES (7, 5, 7, 30000000);  -- ±ØÇÑÁ÷¾÷, À±¹Ì¶ó(ÀÇ»ó µğÀÚÀÌ³Ê)
+INSERT INTO sassign (sano, mno, sno, spay) VALUES (8, 6, 8, 35000000);  -- ÅÃ½Ã¿îÀü»ç, Á¤ÇØ¼º(¹Ì¼ú °¨µ¶)
+INSERT INTO sassign (sano, mno, sno, spay) VALUES (9, 7, 9, 80000000);  -- ±¹Á¦½ÃÀå, °­ÀºÈñ(ÇÁ·Îµà¼­)
+INSERT INTO sassign (sano, mno, sno, spay) VALUES (10, 8, 10, 20000000); -- ¿ÕÀÇ ³²ÀÚ, ÀÌµµÈÆ(ÃÔ¿µ º¸Á¶)
 
 SELECT * FROM SASSIGN;
 
--- í˜‘ì°¬ì‚¬
+-- ÇùÂù»ç
 
--- sponsor í…Œì´ë¸” ë°ì´í„° ì‚½ì… ì˜ˆì‹œ
-INSERT INTO sponsor (spno, company, spcont) VALUES (1, 'CJ ì—”í„°í…Œì¸ë¨¼íŠ¸', '01012345678');
-INSERT INTO sponsor (spno, company, spcont) VALUES (2, 'ë¡¯ë° ì»¬ì²˜ì›ìŠ¤', '01023456789');
+-- sponsor Å×ÀÌºí µ¥ÀÌÅÍ »ğÀÔ ¿¹½Ã
+INSERT INTO sponsor (spno, company, spcont) VALUES (1, 'CJ ¿£ÅÍÅ×ÀÎ¸ÕÆ®', '01012345678');
+INSERT INTO sponsor (spno, company, spcont) VALUES (2, '·Ôµ¥ ÄÃÃ³¿÷½º', '01023456789');
 INSERT INTO sponsor (spno, company, spcont) VALUES (3, 'NEW (Next Entertainment World)', '01034567890');
-INSERT INTO sponsor (spno, company, spcont) VALUES (4, 'ì‡¼ë°•ìŠ¤', '01045678901');
-INSERT INTO sponsor (spno, company, spcont) VALUES (5, 'ë©”ê°€ë°•ìŠ¤ì¤‘ì•™í”ŒëŸ¬ìŠ¤ì— ', '01056789012');
-INSERT INTO sponsor (spno, company, spcont) VALUES (6, 'íŒì”¨ë„¤ë§ˆ', '01067890123');
-INSERT INTO sponsor (spno, company, spcont) VALUES (7, 'ì›Œë„ˆë¸Œë¼ë”ìŠ¤ ì½”ë¦¬ì•„', '01078901234');
-INSERT INTO sponsor (spno, company, spcont) VALUES (8, '20ì„¸ê¸° ìŠ¤íŠœë””ì˜¤', '01089012345');
-INSERT INTO sponsor (spno, company, spcont) VALUES (9, 'ë””ì¦ˆë‹ˆ ì½”ë¦¬ì•„', '01090123456');
-INSERT INTO sponsor (spno, company, spcont) VALUES (10, 'ë„·í”Œë¦­ìŠ¤ ì½”ë¦¬ì•„', '01091234567');
+INSERT INTO sponsor (spno, company, spcont) VALUES (4, '¼î¹Ú½º', '01045678901');
+INSERT INTO sponsor (spno, company, spcont) VALUES (5, '¸Ş°¡¹Ú½ºÁß¾ÓÇÃ·¯½º¿¥', '01056789012');
+INSERT INTO sponsor (spno, company, spcont) VALUES (6, 'ÆÇ¾¾³×¸¶', '01067890123');
+INSERT INTO sponsor (spno, company, spcont) VALUES (7, '¿ö³Êºê¶ó´õ½º ÄÚ¸®¾Æ', '01078901234');
+INSERT INTO sponsor (spno, company, spcont) VALUES (8, '20¼¼±â ½ºÆ©µğ¿À', '01089012345');
+INSERT INTO sponsor (spno, company, spcont) VALUES (9, 'µğÁî´Ï ÄÚ¸®¾Æ', '01090123456');
+INSERT INTO sponsor (spno, company, spcont) VALUES (10, '³İÇÃ¸¯½º ÄÚ¸®¾Æ', '01091234567');
 
 SELECT * FROM sponsor;
 
--- í˜‘ì°¬ - ì˜í™” ê´€ê³„
--- spassign í…Œì´ë¸” ë°ì´í„° ì‚½ì… ì˜ˆì‹œ
+-- ÇùÂù - ¿µÈ­ °ü°è
+-- spassign Å×ÀÌºí µ¥ÀÌÅÍ »ğÀÔ ¿¹½Ã
 INSERT INTO spassign (spano, product, rdate, mno, spno, rtdate) 
-VALUES (1, 'ì¹´ë©”ë¼', TO_DATE('2019-05-01', 'YYYY-MM-DD'), 1, 1, TO_DATE('2019-05-30', 'YYYY-MM-DD')); -- ê¸°ìƒì¶© - CJ ì—”í„°í…Œì¸ë¨¼íŠ¸
+VALUES (1, 'Ä«¸Ş¶ó', TO_DATE('2019-05-01', 'YYYY-MM-DD'), 1, 1, TO_DATE('2019-05-30', 'YYYY-MM-DD')); -- ±â»ıÃæ - CJ ¿£ÅÍÅ×ÀÎ¸ÕÆ®
 INSERT INTO spassign (spano, product, rdate, mno, spno, rtdate) 
-VALUES (2, 'ì˜ìƒ', TO_DATE('2019-04-15', 'YYYY-MM-DD'), 1, 7, TO_DATE('2019-05-25', 'YYYY-MM-DD')); -- ê¸°ìƒì¶© - ì›Œë„ˆë¸Œë¼ë”ìŠ¤ ì½”ë¦¬ì•„
+VALUES (2, 'ÀÇ»ó', TO_DATE('2019-04-15', 'YYYY-MM-DD'), 1, 7, TO_DATE('2019-05-25', 'YYYY-MM-DD')); -- ±â»ıÃæ - ¿ö³Êºê¶ó´õ½º ÄÚ¸®¾Æ
 INSERT INTO spassign (spano, product, rdate, mno, spno, rtdate) 
-VALUES (3, 'í”„ë¡œëª¨ì…˜', TO_DATE('2003-10-01', 'YYYY-MM-DD'), 2, 2, TO_DATE('2003-12-01', 'YYYY-MM-DD')); -- ì˜¬ë“œë³´ì´ - ë¡¯ë° ì»¬ì²˜ì›ìŠ¤
+VALUES (3, 'ÇÁ·Î¸ğ¼Ç', TO_DATE('2003-10-01', 'YYYY-MM-DD'), 2, 2, TO_DATE('2003-12-01', 'YYYY-MM-DD')); -- ¿Ãµåº¸ÀÌ - ·Ôµ¥ ÄÃÃ³¿÷½º
 INSERT INTO spassign (spano, product, rdate, mno, spno, rtdate) 
-VALUES (4, 'ì†Œí’ˆ', TO_DATE('2015-06-01', 'YYYY-MM-DD'), 3, 3, TO_DATE('2015-07-20', 'YYYY-MM-DD')); -- ì•”ì‚´ - NEW
+VALUES (4, '¼ÒÇ°', TO_DATE('2015-06-01', 'YYYY-MM-DD'), 3, 3, TO_DATE('2015-07-20', 'YYYY-MM-DD')); -- ¾Ï»ì - NEW
 INSERT INTO spassign (spano, product, rdate, mno, spno, rtdate) 
-VALUES (5, 'ì¡°ëª… ì¥ë¹„', TO_DATE('2014-06-01', 'YYYY-MM-DD'), 4, 4, TO_DATE('2014-07-10', 'YYYY-MM-DD')); -- ëª…ëŸ‰ - ì‡¼ë°•ìŠ¤
+VALUES (5, 'Á¶¸í Àåºñ', TO_DATE('2014-06-01', 'YYYY-MM-DD'), 4, 4, TO_DATE('2014-07-10', 'YYYY-MM-DD')); -- ¸í·® - ¼î¹Ú½º
 INSERT INTO spassign (spano, product, rdate, mno, spno, rtdate) 
-VALUES (6, 'ì´¬ì˜ ì¥ë¹„', TO_DATE('2019-01-01', 'YYYY-MM-DD'), 5, 5, TO_DATE('2019-02-15', 'YYYY-MM-DD')); -- ê·¹í•œì§ì—… - ë©”ê°€ë°•ìŠ¤ì¤‘ì•™í”ŒëŸ¬ìŠ¤ì— 
+VALUES (6, 'ÃÔ¿µ Àåºñ', TO_DATE('2019-01-01', 'YYYY-MM-DD'), 5, 5, TO_DATE('2019-02-15', 'YYYY-MM-DD')); -- ±ØÇÑÁ÷¾÷ - ¸Ş°¡¹Ú½ºÁß¾ÓÇÃ·¯½º¿¥
 INSERT INTO spassign (spano, product, rdate, mno, spno, rtdate) 
-VALUES (7, 'VFX ì†Œí”„íŠ¸ì›¨ì–´', TO_DATE('2017-07-01', 'YYYY-MM-DD'), 6, 6, TO_DATE('2017-08-01', 'YYYY-MM-DD')); -- íƒì‹œìš´ì „ì‚¬ - íŒì”¨ë„¤ë§ˆ
+VALUES (7, 'VFX ¼ÒÇÁÆ®¿ş¾î', TO_DATE('2017-07-01', 'YYYY-MM-DD'), 6, 6, TO_DATE('2017-08-01', 'YYYY-MM-DD')); -- ÅÃ½Ã¿îÀü»ç - ÆÇ¾¾³×¸¶
 INSERT INTO spassign (spano, product, rdate, mno, spno, rtdate) 
-VALUES (8, 'ê´‘ê³ ', TO_DATE('2014-10-01', 'YYYY-MM-DD'), 7, 8, TO_DATE('2014-11-01', 'YYYY-MM-DD')); -- êµ­ì œì‹œì¥ - 20ì„¸ê¸° ìŠ¤íŠœë””ì˜¤
+VALUES (8, '±¤°í', TO_DATE('2014-10-01', 'YYYY-MM-DD'), 7, 8, TO_DATE('2014-11-01', 'YYYY-MM-DD')); -- ±¹Á¦½ÃÀå - 20¼¼±â ½ºÆ©µğ¿À
 INSERT INTO spassign (spano, product, rdate, mno, spno, rtdate) 
-VALUES (9, 'ìŒí–¥ ì¥ë¹„', TO_DATE('2005-11-01', 'YYYY-MM-DD'), 8, 9, TO_DATE('2005-12-15', 'YYYY-MM-DD')); -- ì™•ì˜ ë‚¨ì - ë””ì¦ˆë‹ˆ ì½”ë¦¬ì•„
+VALUES (9, 'À½Çâ Àåºñ', TO_DATE('2005-11-01', 'YYYY-MM-DD'), 8, 9, TO_DATE('2005-12-15', 'YYYY-MM-DD')); -- ¿ÕÀÇ ³²ÀÚ - µğÁî´Ï ÄÚ¸®¾Æ
 INSERT INTO spassign (spano, product, rdate, mno, spno, rtdate) 
-VALUES (10, 'ì˜ìƒ í¸ì§‘ ì†Œí”„íŠ¸ì›¨ì–´', TO_DATE('2017-11-01', 'YYYY-MM-DD'), 10, 10, TO_DATE('2017-12-01', 'YYYY-MM-DD')); -- ì‹ ê³¼ í•¨ê»˜ - ë„·í”Œë¦­ìŠ¤ ì½”ë¦¬ì•„
+VALUES (10, '¿µ»ó ÆíÁı ¼ÒÇÁÆ®¿ş¾î', TO_DATE('2017-11-01', 'YYYY-MM-DD'), 10, 10, TO_DATE('2017-12-01', 'YYYY-MM-DD')); -- ½Å°ú ÇÔ²² - ³İÇÃ¸¯½º ÄÚ¸®¾Æ
 
 
 SELECT * FROM spassign;
-
-
-
-r

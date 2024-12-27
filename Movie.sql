@@ -4,12 +4,12 @@ CREATE TABLE movie(
     pdate date constraint movie_pdate not null
     );
     
-    -- Ï∂îÍ∞Ä
+    -- √ﬂ∞°
     
     ALTER TABLE movie 
     ADD (producer varchar2(20) constraint movie_producer not null);
     
-    -- Î≥ÄÍ≤Ω
+    -- ∫Ø∞Ê
     ALTER TABLE movie
     MODIFY(
     mno number(10),
@@ -22,15 +22,15 @@ CREATE TABLE genre(
     gtype varchar(50) constraint genre_Gtype not null
     );
 
-    -- ÏÇ≠Ï†ú
+    -- ªË¡¶
     ALTER TABLE genre
     DROP COLUMN gtype
     ;
-    -- Ï∂îÍ∞Ä
+    -- √ﬂ∞°
     ALTER TABLE genre
     ADD (gname varchar2(100) constraint genre_Gname not null);
     
-    -- Î≥ÄÍ≤Ω
+    -- ∫Ø∞Ê
     ALTER TABLE genre
     MODIFY(gno number(10)
     );
@@ -41,9 +41,17 @@ CREATE TABLE gassign(
     gno number(10)
     );
     
-    -- Ï∂îÍ∞Ä
+    -- √ﬂ∞°
     ALTER TABLE gassign
     ADD constraint FK_gassign_gno FOREIGN key (gno) REFERENCES genre(gno);
+
+-- gassign ≈◊¿Ã∫Ìø° mno ƒ√∑≥ √ﬂ∞°
+ALTER TABLE gassign
+ADD mno NUMBER(10);
+
+-- mno ƒ√∑≥¿ª movie ≈◊¿Ã∫Ì¿« mnoøÕ ø¨∞·
+ALTER TABLE gassign
+ADD CONSTRAINT fk_gassign_mno FOREIGN KEY (mno) REFERENCES movie(mno);
 -----------------------------------------------------------------------------------------------------           
 
 CREATE TABLE actor(
@@ -53,7 +61,7 @@ CREATE TABLE actor(
     acont number(20) constraint actor_acont not null
     );
     
-    -- Î≥ÄÍ≤Ω
+    -- ∫Ø∞Ê
     ALTER TABLE actor
     MODIFY (ano number(10),
            aname varchar2(200),
@@ -64,8 +72,16 @@ CREATE TABLE actor(
     ano number(4) constraint fk_actassign_ano not null, foreign key(ano) references actor(ano),
     apay number(10) constraint actassign_apay not null,
     aroll varchar(100) constraint actassign_aroll not null);
+   
+   
+ALTER TABLE actassign
+ADD mno NUMBER(10) NOT NULL;
+
+ALTER TABLE actassign
+ADD CONSTRAINT FK_actassign_mno FOREIGN KEY (mno) REFERENCES movie(mno);
+
     
--- Î≥ÄÍ≤Ω    
+-- ∫Ø∞Ê    
 ALTER TABLE actassign
 MODIFY ( asno number(10),
          ano number(10),
@@ -84,15 +100,15 @@ CREATE TABLE staff(
     scont number(20) constraint staff_scont not null
     );
 
-    -- ÏÇ≠Ï†ú
+    -- ªË¡¶
     ALTER TABLE staff
     DROP COLUMN spos;
     
-    -- Ï∂îÍ∞Ä
+    -- √ﬂ∞°
     ALTER TABLE staff
     ADD sroll varchar2(20);
     
-    -- Î≥ÄÍ≤Ω
+    -- ∫Ø∞Ê
     ALTER TABLE staff
     MODIFY( sroll constraint staff_sroll not null,
             sname varchar2(200),
@@ -116,16 +132,16 @@ CREATE TABLE sponsor(
     spcont number(20) constraint sponsor_spcont not null
     );
     
-    -- Î≥ÄÍ≤Ω
+    -- ∫Ø∞Ê
     ALTER TABLE sponsor
     MODIFY (spno number(10),
             spnr varchar2(200));
             
-    -- ÌÖåÏù¥Î∏îÎ™Ö Î≥ÄÍ≤Ω
+    -- ≈◊¿Ã∫Ì∏Ì ∫Ø∞Ê
     ALTER TABLE sponsor
     RENAME COLUMN spnr TO company;
     
-    -- Î≥ÄÍ≤Ω
+    -- ∫Ø∞Ê
     ALTER TABLE sponsor 
     ADD CONSTRAINT sponsor_company_nn CHECK (company IS NOT NULL);
 
@@ -136,22 +152,23 @@ CREATE TABLE spassign(
     prod varchar(200) constraint spassign_prod not null,
     rdate date constraint spassign_rdate not null);
     
-    -- Ïó¥ Ïù¥Î¶Ñ Î≥ÄÍ≤Ω
+    -- ø≠ ¿Ã∏ß ∫Ø∞Ê
     ALTER TABLE spassign
     rename column pno to spano;
 
     ALTER TABLE spassign
     rename column prod to product;
     
-    -- Ïª¨Îüº Ï∂îÍ∞Ä
+    -- ƒ√∑≥ √ﬂ∞°
     ALTER TABLE spassign
     ADD (mno number(10),
         spno number (10),
         rtdate date not null);
         
-    -- Ìè¨ÎßÅÌÇ§ Ï∂îÍ∞Ä
+    -- ∆˜∏µ≈∞ √ﬂ∞°
     ALTER TABLE spassign
     ADD constraint fk_mno foreign key (mno) references movie(mno);
     
     ALTER TABLE spassign
     ADD constraint fk_spno foreign key (spno) references sponsor(spno);
+
